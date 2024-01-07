@@ -1,0 +1,187 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>windows常见命令 | 黄昏</title><meta name="author" content="tfktk"><meta name="copyright" content="tfktk"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="1.cmd是什么？CMD，全称 Command Prompt，是一种命令行界面，常见于Windows操作系统中。它提供了一个用户可以通过键入文本命令来与计算机进行交互的界面。通过CMD，用户可以执行各种系统命令和程序，进行文件和文件夹管理，以及进行系统设置等操作。CMD提供了一种比图形化界面更直接、更灵活的方式来操作计算机和执行任务。 2.CMD基本命令：gpedit.msc—–组策略servic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows常见命令">
+<meta property="og:url" content="http://example.com/2024/01/08/windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="黄昏">
+<meta property="og:description" content="1.cmd是什么？CMD，全称 Command Prompt，是一种命令行界面，常见于Windows操作系统中。它提供了一个用户可以通过键入文本命令来与计算机进行交互的界面。通过CMD，用户可以执行各种系统命令和程序，进行文件和文件夹管理，以及进行系统设置等操作。CMD提供了一种比图形化界面更直接、更灵活的方式来操作计算机和执行任务。 2.CMD基本命令：gpedit.msc—–组策略servic">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/avatar.png">
+<meta property="article:published_time" content="2024-01-07T17:03:22.000Z">
+<meta property="article:modified_time" content="2024-01-07T17:05:20.300Z">
+<meta property="article:author" content="tfktk">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2024/01/08/windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":"ture","top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'windows常见命令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-08 01:05:20'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/default_top_img.png')"><nav id="nav"><span id="blog-info"><a href="/" title="黄昏"><span class="site-name">黄昏</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-graduation-cap"></i><span> 博文</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><i class="fa-fw fa fa-archive"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/archives/"><i class="fa-fw fa fa-folder-open"></i><span> 归档</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 生活</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/shuoshuo/"><i class="fa-fw fa fa-comments-o"></i><span> 分享</span></a></li><li><a class="site-page child" href="/photos/"><i class="fa-fw fa fa-camera-retro"></i><span> 相册</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw fa fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 影视</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fa fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/comment/"><i class="fa-fw fa fa-paper-plane"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于笔者</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">windows常见命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-01-07T17:03:22.000Z" title="发表于 2024-01-08 01:03:22">2024-01-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-01-07T17:05:20.300Z" title="更新于 2024-01-08 01:05:20">2024-01-08</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="windows常见命令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="1-cmd是什么？"><a href="#1-cmd是什么？" class="headerlink" title="1.cmd是什么？"></a>1.cmd是什么？</h1><p>CMD，全称 Command Prompt，是一种命令行界面，常见于Windows操作系统中。它提供了一个用户可以通过键入文本命令来与计算机进行交互的界面。通过CMD，用户可以执行各种系统命令和程序，进行文件和文件夹管理，以及进行系统设置等操作。CMD提供了一种比图形化界面更直接、更灵活的方式来操作计算机和执行任务。</p>
+<h1 id="2-CMD基本命令："><a href="#2-CMD基本命令：" class="headerlink" title="2.CMD基本命令："></a>2.CMD基本命令：</h1><p>gpedit.msc—–组策略<br>services.msc—本地服务设置<br>explorer——-打开资源管理器<br>gpedit.msc—–组策略<br>sndrec32——-录音机#windows11没有这个<br>lusrmgr.msc—-本机用户和组<br>services.msc—本地服务设置<br>notepad——–打开记事本<br>cleanmgr——-垃圾整理<br>net start messenger—-开始信使服务#window11打不开这个服务<br>compmgmt.msc—打开1计算机管理<br>dvdplay——–DVD播放器<br>charmap——–启动字符映射表<br>diskmgmt.msc—磁盘管理实用程序<br>calc———–启动计算器<br>devmgmt.msc— 设备管理器<br>dxdiag———检查DirectX信息，诊断工具<br>DirectX诊断工具（也称为DXDiag）是Windows操作系统中的实用工具，用于诊断和检查计算机的DirectX相关信息。它可以帮助用户了解计算机的图形、音频和输入设备等DirectX相关信息，包括DirectX版本、驱动程序、显卡信息、音频设备信息等。可以通过DXDiag来检查DirectX的版本和功能，查看显卡和声卡信息，甚至进行一些简单的性能测试和故障排除。DXDiag工具通常用于检查计算机的图形和音频能力，以及解决与DirectX相关的问题。<br>regedt32——-注册表编辑器<br>Msconfig.exe—系统配置实用程序<br>rsop.msc——-组策略结果集<br>regedit.exe-—注册表等等</p>
+<h1 id="3-windows命令行命令："><a href="#3-windows命令行命令：" class="headerlink" title="3.windows命令行命令："></a>3.windows命令行命令：</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">//进入d盘</span><br><span class="line">D:</span><br><span class="line">//进入F盘</span><br><span class="line">F:</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /?     //获取使用帮助</span><br><span class="line">cd \       //跳转到硬盘的根目录</span><br><span class="line">cd C:\WINDOWS  //跳转到当前硬盘的其他文件</span><br><span class="line">d:        //跳转到其他硬盘</span><br><span class="line">cd /d e:\software    //跳转到其他硬盘的其他文件夹，注意此处必须加/d参数。否则无法跳转。</span><br><span class="line">cd..      //跳转到上一层目录</span><br></pre></td></tr></table></figure>
+
+<p>1.dir：<br>显示当前目录中的文件和文件夹列表。<br>用法：dir [目录路径]<br>示例：dir C:\Users，显示 Users 目录下的文件和文件夹列表。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704555427374-8c6a8b05-0c75-4a14-999a-da520f0683c8.png" alt="image.png"><br>2.cd：更改当前目录。<br>用法：cd [目录路径]<br>示例：cd C:\Windows\System32，切换到 System32 目录。<br>cd G：<br>G&#x2F;<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704555647277-e71cc67b-8bbc-43f4-89c3-741c9a1bf425.png" alt="image.png"><br>在 Windows 命令行中，执行 <code>cd G:</code> 命令会将当前目录切换到指定的驱动器。当你执行这个命令后，命令行窗口的提示符会从原来的路径更改为新驱动器的根目录。<br>‘&#x2F;‘ 符号在命令行中通常用作路径分隔符，用于指示目录层级关系。所以，当你在 Windows 命令行中看到 <code>G/</code>，实际上是在表示 G 驱动器的根目录。这是因为在 Windows 命令行中，使用 forward slash (&#x2F;) 来表示路径分隔符。<br>因此，即使你在命令行中输入的命令是 <code>cd G: </code>，但显示的结果是 <code>G/</code>，这只是命令行窗口中显示路径分隔符的方式不同，实际上已经成功切换到了 G 驱动器的根目录。如果你继续输入命令或执行其他操作，将会在 G 驱动器的根目录进行。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704555718338-ef1c6aa0-bcd7-48ca-81c2-2290b4ccedf7.png" alt="image.png"><br>3.md：只能创建新的文件夹。<br>用法：md [新文件夹名]<br>示例：md asd，在当前目录下创建新的文件夹 asd。<br>4.rd：删除空文件夹。<br>用法：rd [要删除的文件夹名]<br>示例：rd asd，删除当前目录下的文件夹 asd。</p>
+<p>rd &#x2F;s &#x2F;q </p>
+<p>md asd1<br>5.在 “G:\asd1” 目录下创建一个名为 “1.txt” 的文本文件：<br><strong>echo. &gt; “G:\asd1\1.txt”</strong><br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704556798824-21efceb9-b85a-432f-af29-7ed691fbcbf0.png" alt="image.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo 文本内容 &gt; 文件名.txt</span><br></pre></td></tr></table></figure>
+
+<p>find：<br>用法：find “12” 文件名<br>示例：find “12” 1.txt<br>结果：这条命令将在 test.txt 中搜索包含 “12” 文本的行。<br>5.copy：复制文件或文件夹。<br>新建文件夹file<br>新建2.txt<br>echo. “G:\2.txt”<br>用法：copy [源文件路径] [目标文件路径]<br>示例：copy G:2.txt G:\file，将 2.txt 复制到 G:\file。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704556313927-913c6da5-04ac-4f0f-8f32-5e7de1de1908.png" alt="image.png"><br>6.xcopy：复制文件和文件夹，并可以选择性地包括子目录和文件。<br>用法：xcopy [源路径] [目标路径] &#x2F;s<br>示例：xcopy C:\Source D:\Destination &#x2F;s，将 C:\Source 中的内容复制到 D:\Destination。<br>结果：<br>每个文件的复制过程，包括源文件的名称和目标文件的名称。<br>被复制的文件数量以及复制成功的数量。<br>如果有文件未能被复制，它还会显示有关这些文件的信息，比如文件不存在或者访问权限不足等。<br>7.del：删除文件。<br>用法：del [文件名]<br>示例：del 1.txt，删除当前目录下的 1.txt 文件。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704556877597-55230bdd-8081-4dfc-9506-962f69feb260.png" alt="image.png"><br>8.ren：重命名文件或文件夹。<br>用法：ren [原文件名] [新文件名]<br>示例：ren file file1，将文件名 file 改为 file1。<br>echo. &gt;”G:\3.txt”<br>9.move：移动文件或文件夹到另一个位置。<br>用法：move [源路径] [目标路径]<br>示例：move 3.txt G:\file1，将文件 3.txt 移动到G:\file1 。<br>echo. &gt;”G:\4.txt”<br>10.type：显示文件内容。<br>用法：type [文件名]<br>示例：type 4.txt，显示 4.txt 文件的内容。<br>11.attrib：显示或更改文件的属性。<br>用法：attrib [+&#x2F;-][属性] [文件名]<br>示例：attrib +r 4.txt，将4.txt 设置为只读属性。<br>12.cls：清空命令行窗口。<br>用法：cls<br>示例：在命令提示符下直接输入 cls，清空当前窗口内容。<br>13.tasklist：显示正在运行的进程列表。<br>用法：tasklist<br>示例：在命令提示符下直接输入 tasklist，显示当前正在运行的进程列表。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704557877152-4ec40bb9-e8f9-42f4-9e32-2d8072fd71d8.png" alt="image.png"><br>14.taskkill：终止进程。<br>用法：taskkill &#x2F;F &#x2F;IM [进程名]#&#x2F;IM 参数用于指定要终止的进程的映像名称。映像名称是指运行的可执行文件的名称，通常是带有扩展名的文件名。<br>示例：taskkill &#x2F;F &#x2F;IM baidunetdisk.exe，强制关闭名为baidunetdisk.exe 的进程。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704558110641-bfb369f2-40fc-402b-8f2a-7642842a49d6.png" alt="image.png"><br>15.ipconfig：显示计算机的网络连接配置信息，包括 IP 地址、子网掩码、默认网关等。<br>用法：ipconfig<br>示例：在命令提示符下直接输入 ipconfig，显示当前网络适配器的 IP 配置信息。<br>16.ping：向指定的 IP 地址发送 ICMP 回显请求以测试网络连接。<br>用法：ping [目标地址]<br>示例：ping <a target="_blank" rel="noopener" href="http://www.baidu.com,向/">www.baidu.com，向</a> <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 发送 ICMP 请求。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704558524964-b75676f9-ff81-4fa4-9951-0d3e12cc023d.png" alt="image.png"><br>17.tracert：跟踪数据包在网络上的路由路径。<br>用法：tracert [目标地址]<br>示例：tracert <a target="_blank" rel="noopener" href="http://www.baidu.com,跟踪访问/">www.baidu.com，跟踪访问</a> <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 的网络路由路径。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704558996775-875c22b6-414e-400f-84db-a2907fcb8bed.png" alt="image.png"><br>当执行”tracert”命令时，它会在计算机和目标主机之间的路由上发送一系列的网络探测包（ICMP报文），以测量数据包到达目标主机所经过的中间节点的时间。如果在路由跟踪过程中某个节点上的数据包超过一定的时间限制（默认为1秒），则会显示”超时”。<br>“超时”可能有多种原因，包括网络拥堵、丢包、路由过程中的延迟以及某个节点对ICMP报文的阻止等。当遇到超时时，这意味着在该节点上可能存在网络问题或延迟，或者该节点丢弃了ICMP报文。超时并不一定表示有问题，尤其是在跨越国际边界或通过公共互联网时，超时是比较常见的。<br>如果在”tracert”结果中只有一两个节点显示超时，而后续节点显示正常，那么可能是在路由路径上的某个特定节点上出现了临时问题。但是，如果多个节点显示超时，或者超时延迟很高，并持续出现在整个路由跟踪过程中，那么可能存在网络连接或路由配置的问题。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704559293784-1d4d620a-740b-4f60-a8b3-52b831f9405b.png" alt="image.png"><br>18.netstat：显示当前处于活动状态的网络连接。<br>netstat -h:帮助命令<br>用法：netstat [-a] [-b] [-n] [-o]<br>示例：netstat -a，显示当前计算机的所有活动连接。<br>netstat -b 会显示正在使用连接的可执行程序的名称。<br>netstat -n 会以数字格式显示地址和端口号。<br>netstat -o 会显示与每个连接关联的进程的标识符。<br>19.chkdsk：检查磁盘的文件系统错误并修复。<br>用法：chkdsk [驱动器盘符] &#x2F;f<br>示例：chkdsk C: &#x2F;f，检查并修复 C 盘文件系统错误。#没有权限<br>20.format：格式化磁盘。<br>用法：format [驱动器盘符]: &#x2F;FS:文件系统类型<br>示例：format D: &#x2F;FS:NTFS，格式化 D 盘为 NTFS 文件系统。</p>
+<p>21.shutdown [&#x2F;s][&#x2F;r][&#x2F;t xx][&#x2F;c “comment”][&#x2F;f][&#x2F;h][&#x2F;p]<br>示例：shutdown &#x2F;s &#x2F;t 0<br>结果：这条命令将立即关闭计算机(&#x2F;s)，不发送警告(&#x2F;f)，不显示详细信息(&#x2F;c “comment”)。</p>
+<ul>
+<li>&#x2F;s：关闭计算机。这将立即关闭计算机，用户将被注销。</li>
+<li>&#x2F;r：重新启动计算机。这会导致计算机立即重新启动。</li>
+<li>&#x2F;t xx：指定关机或重启前的等待时间（以秒为单位），其中 xx 表示等待的秒数。例如，&#x2F;t 60 表示在执行关机或重启操作前等待 60 秒。</li>
+<li>&#x2F;c “comment”：指定关机或重启时的注释信息。可以添加一条注释，以便其他用户了解关机或重启的原因。</li>
+<li>&#x2F;f：强制关闭应用程序。这将强制关闭当前正在运行的应用程序而不经过提示。</li>
+<li>&#x2F;h：在支持的计算机上，将系统休眠（Hibernate）。</li>
+<li>&#x2F;p：用在和 &#x2F;s 选项一起，将系统关闭而不需要用户登录。</li>
+</ul>
+<p>22.systeminfo：这条命令将列出系统的详细信息，如操作系统版本、安装日期、可用的物理内存等。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704559744341-2293e1d8-c690-4b44-bf13-d25fe2a99990.png" alt="image.png"><br>23.net：<br>用法：net [命令]<br>示例：net user<br>结果：这条命令将显示本地用户账户的信息。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704559781260-47110491-cd71-4f75-91c4-6b4e9b9cd236.png" alt="image.png"></p>
+<p>24.assoc：<br>用法：assoc [.扩展名]<br>示例：assoc .exe<br>结果：这条命令将显示 .exe 文件扩展名关联的程序。<br>如果命令行输出为 “.exe&#x3D;exefile”，则表示 .exe 文件扩展名被关联到 “exefile” 这个文件类型。默认情况下，Windows 将 .exe 文件关联到可执行程序。<br>25.driverquery：<br>用法：driverquery<br>示例：driverquery<br>结果：这条命令将显示当前系统中安装的驱动程序列表。<br>26.schtasks：<br>schtasks 是 Windows 操作系统的命令行工具，用于管理计划任务（Scheduled Tasks）。计划任务是在指定的时间或事件触发时自动执行的操作、脚本或程序。<br>用法：schtasks [参数]<br>示例：schtasks &#x2F;query#列出系统中当前存在的所有计划任务，并显示它们的名称、计划时间、状态等信息。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1704560214915-78285a32-a6e3-4c41-b4ef-7e852d6bd0b0.png" alt="image.png"><br>&#x2F;query：列出当前系统中的所有计划任务。<br>&#x2F;create：创建新的计划任务。<br><strong>schtasks &#x2F;create &#x2F;tn DailyScript &#x2F;tr C:\Scripts\run_daily_script.bat &#x2F;sc daily &#x2F;st 08:00</strong></p>
+<ul>
+<li>&#x2F;create 表示创建一个新的计划任务。</li>
+<li>&#x2F;tn DailyScript 指定了任务的名称为 “DailyScript”。#TaskName</li>
+<li>&#x2F;tr C:\Scripts\run_daily_script.bat 指定了任务要运行的程序或脚本的路径。</li>
+<li>&#x2F;sc daily 指定了任务的触发类型为每天。#Schedule日程安排</li>
+<li>&#x2F;st 08:00 指定了任务的开始时间为早上 8 点。</li>
+</ul>
+<p>&#x2F;delete：删除指定的计划任务。<br>用法：schtasks &#x2F;delete &#x2F;tn TaskName<br>&#x2F;run：立即运行指定的计划任务。<br>用法：schtasks &#x2F;run &#x2F;tn TaskName<br>&#x2F;end：停止正在运行的指定计划任务。<br>用法：schtasks &#x2F;end &#x2F;tn TaskName<br>&#x2F;change：修改指定的计划任务配置。<br>用法：schtasks &#x2F;change &#x2F;tn TaskName [options]<br>&#x2F;enable：启用指定的计划任务。<br>用法：schtasks &#x2F;enable &#x2F;tn TaskName<br>&#x2F;disable：禁用指定的计划任务。<br>用法：schtasks &#x2F;disable &#x2F;tn TaskName<br>&#x2F;queryschedules：按照计划时间查询计划任务。<br>用法：schtasks &#x2F;queryschedules &#x2F;tn TaskName<br>&#x2F;tn：指定要操作的计划任务的名称。<br>用法：schtasks &#x2F;command &#x2F;tn TaskName<br>&#x2F;ru：指定计划任务要运行的用户。<br>用法：schtasks &#x2F;create &#x2F;ru Username &#x2F;tn TaskName<br>&#x2F;rp：指定计划任务要运行的用户的密码。<br>用法：schtasks &#x2F;create &#x2F;rp Password &#x2F;tn TaskName</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a target="_blank" rel="noopener" href="https://tfktk.github.io/">tfktk</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2024/01/08/windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/">http://example.com/2024/01/08/windows常见命令/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">黄昏</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/08/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90-%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%9A%84%E4%BD%BF%E7%94%A8/" title="信息收集域名解析,小米范的使用"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">信息收集域名解析,小米范的使用</div></div></a></div><div class="next-post pull-right"><a href="/2024/01/08/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" title="进程与线程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">进程与线程</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">tfktk</div><div class="author-info__description">冷酷且自信</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">52</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>hit me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">全新功能和改进已上线！立即更新！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-cmd%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">1.cmd是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-CMD%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">2.CMD基本命令：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-windows%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">3.windows命令行命令：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/08/%E6%95%99%E8%82%B2SRC%E5%88%86%E6%9E%90-%E5%BC%B1%E5%8F%A3%E4%BB%A4%E6%BC%8F%E6%B4%9E/" title="教育SRC分析,弱口令漏洞">教育SRC分析,弱口令漏洞</a><time datetime="2024-01-07T17:20:15.000Z" title="发表于 2024-01-08 01:20:15">2024-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/08/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90-%E5%B0%8F%E7%B1%B3%E8%8C%83%E7%9A%84%E4%BD%BF%E7%94%A8/" title="信息收集域名解析,小米范的使用">信息收集域名解析,小米范的使用</a><time datetime="2024-01-07T17:06:53.000Z" title="发表于 2024-01-08 01:06:53">2024-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/08/windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" title="windows常见命令">windows常见命令</a><time datetime="2024-01-07T17:03:22.000Z" title="发表于 2024-01-08 01:03:22">2024-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/08/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" title="进程与线程">进程与线程</a><time datetime="2024-01-07T16:59:00.000Z" title="发表于 2024-01-08 00:59:00">2024-01-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/01/08/MonkeyBox%E9%9D%B6%E6%9C%BA%E9%80%9A%E5%85%B3%E6%95%99%E7%A8%8B/" title="MonkeyBox靶机通关教程">MonkeyBox靶机通关教程</a><time datetime="2024-01-07T16:55:16.000Z" title="发表于 2024-01-08 00:55:16">2024-01-08</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By tfktk</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
