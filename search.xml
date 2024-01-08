@@ -351,7 +351,7 @@
       
       <categories>
           
-          <category> python </category>
+          <category> python基础 </category>
           
       </categories>
       
@@ -478,6 +478,18 @@
         <content type="html"><![CDATA[<p>代码占用，没有想好的条件下可以用pass<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701608679852-38d54dca-4cf0-451e-8161-53bc8eacedb0.png" alt="image.png"></p>]]></content>
       
       
+      <categories>
+          
+          <category> python基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
       
     </entry>
     
@@ -491,6 +503,18 @@
         <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>循环是可以迭代的</span><br><span class="line"><span class="keyword">for</span> 变量 <span class="keyword">in</span> 可迭代的东西：</span><br><span class="line">    代码</span><br><span class="line">解释：把可迭代的东西中的每一项内容拿出来，挨个的赋值给变量，每一次赋值都要执行一次循环体(代码)</span><br></pre></td></tr></table></figure><p>for循环是可以迭代的<br>for 变量 in 可迭代的东西：<br>    代码<br>解释：把可迭代的东西中的每一项内容拿出来，挨个的赋值给变量，每一次赋值都要执行一次循环体(代码)</p><p>可以把每个字符串打印出来：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701607226953-507ddc0d-3a0e-48ed-9d11-8ff74b93d47c.png" alt="image.png"></p><p>for循环想要计数，必须借助于range<br>range(n):从0数到n，不包括n<br>range(m,n):从m数到n，依然不包括n<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701607706904-e2aaa39c-4e4a-4b4b-88dc-a5339aa3029f.png" alt="image.png"></p><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701607669169-a0b103b4-0abb-4dbb-a1e6-7820625d8b7c.png" alt="image.png"><br>range(m,n,q):从m数到n，依然不包括n,每次的间隔为q，示例如下：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701608079399-807e2ef1-cc42-4e86-b8e8-7ec695e4ba87.png" alt="image.png"></p><p>最后的笔记为：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701608397232-2ac00fcc-01b5-4c5a-a199-5848d9cddd13.png" alt="image.png"></p>]]></content>
       
       
+      <categories>
+          
+          <category> python基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
       
     </entry>
     
@@ -530,6 +554,12 @@
         <content type="html"><![CDATA[<p>基本的数据类型，这里只讲三个<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701590166050-1f10598d-b461-4330-a2f5-d2ba41953fbd.png" alt="image.png"><br>a和b都是同一个数据类型，才能进行运算：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701590208960-3bd2806b-8ea3-438a-b429-e1a19cd40218.png" alt="image.png"><br>小数比较简单<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701590461221-9a21a55e-37be-4091-a373-5acd015ab2de.png" alt="image.png"><br>这里不是很懂，为什么不会出现准确的数字？<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701590687844-c7d32db3-e301-471e-a160-bb4c11c5a8ee.png" alt="image.png"></p><p>字符串是重点，要用单引号或者双引号，三单引号，三双引号引起来，这四种情况都不会报错。<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701591143361-1d7f255e-912f-43a7-945d-5de7d64504a0.png" alt="image.png"></p><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701591175974-117fdc16-96d8-4144-9303-b07ce047dd16.png" alt="image.png"></p><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701591539494-addefaca-1df1-4f6c-b4ea-1b7eabd377fe.png" alt="image.png"><br>文字可以做加法，两端必须是字符串<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701591833567-eeeb019e-29ea-4f70-9a91-978fca75e962.png" alt="image.png"><br>如果一端是数字就会报错<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701592019531-92b23d57-5655-498c-a53a-02cc4b07e850.png" alt="image.png"><br>字符串可以做乘法，表示字符串重复的次数<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701592211764-fad72ebc-4f64-445c-9931-f5ebd15fc3fb.png" alt="image.png"><br>布尔类型：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701592538017-7779ad52-1a86-4378-ac46-454d772e2bc7.png" alt="image.png"><br>举例：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701593046080-af9dd5e5-8f3d-4029-bfa5-f5a57b46cc21.png" alt="image.png"></p><p>最后笔记结果：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701593089744-22841433-bc6f-4d08-9630-84e5572e1263.png" alt="image.png"></p>]]></content>
       
       
+      <categories>
+          
+          <category> python基础 </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -543,6 +573,18 @@
         <content type="html"><![CDATA[<p>打印一篇文章简单，但是一篇文章内容太大咋办，这就需要变量，打开pycharm输入print()<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701584853329-902ffdca-613c-4828-b65a-b8a286e09206.png" alt="image.png"><br>一篇篇打印太麻烦，此时可以运用变量进行打印<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701585235157-5634b6ed-3d1b-4653-bf97-79da785b1580.png" alt="image.png"><br>结果如下：<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701585251765-23698f2d-2646-4f22-bfde-879b1e818907.png" alt="image.png"></p><p>a原先为188，后面变为166，但是打印的时候都会显示：</p><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701585900274-d9789614-1ba4-41eb-b563-f7dd5c637118.png" alt="image.png"></p><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701585749640-33f9502d-9b1b-43a5-a8d6-63c8080baa93.png" alt="image.png"><br>单纯按照规范输入也不会报错<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701586818905-bc0e523d-10e3-40d7-a5ce-8c2e2972adde.png" alt="image.png"></p><h2 id="python的书写规范："><a href="#python的书写规范：" class="headerlink" title="python的书写规范："></a>python的书写规范：</h2><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701588613806-4b8b66b6-c9c4-4078-a4c7-5178c8d215d5.png" alt="image.png"></p><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701587448714-68beb262-eed1-4fcd-b387-4a4a275575cf.png" alt="image.png"><br>按照上述输入，没有问题，但是按照规范还是不建议</p><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701588656320-f2a7ebdb-fa93-4b12-aa1e-579ca26a2b21.png" alt="image.png"><br>关键字，在创建变量时不能使用，上图最后两个是可以使用的，不过第一个更直观。<br>一个很严重的问题，引号有无的区别，第一个打印的时name的值，第二个打印的是name<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701589056852-e48ee588-c51d-44c2-a550-0c6d47acae5e.png" alt="image.png"></p><h2 id="最后的笔记："><a href="#最后的笔记：" class="headerlink" title="最后的笔记："></a>最后的笔记：</h2><p><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1701598267818-c43d912b-e1cb-4832-950b-03cd4f4a38f5.png" alt="image.png"></p>]]></content>
       
       
+      <categories>
+          
+          <category> python基础 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
       
     </entry>
     
