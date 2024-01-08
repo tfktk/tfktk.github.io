@@ -342,6 +342,31 @@
     
     
     <entry>
+      <title>bytes</title>
+      <link href="/2023/12/10/bytes/"/>
+      <url>/2023/12/10/bytes/</url>
+      
+        <content type="html"><![CDATA[<h2 id="编码和解码"><a href="#编码和解码" class="headerlink" title="编码和解码"></a>编码和解码</h2><p>encode编码：进行转换<br>b’xxxxxx’ bytes类型 一个\xx是一个byte也就是说邓官诚gbk转换成byte类型是6个byte<br>b’xxxxxx’ bytes类型 一个\xx是一个byte也就是说邓官诚utf-8转换成byte类型是9个byte<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1702131454433-aca89cc7-b6ac-4902-b564-7e7554c913f1.png" alt="image.png"><br>怎么把gbk转换成utf-8类型的呢?<br>先变成文字符号(字符串)此时用到了解码decode<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1702131734543-9f0376a9-7274-4360-9a39-af111322fd87.png" alt="image.png"><br>再去重新定义一个变量对字符串进行编码encode<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1702131886957-3b0c7a20-8fa1-48be-acbc-676eb84441fe.png" alt="image.png"><br>在这段文字中asd会正常显示因为是英文，英文不管在什么编码中都是正常显示的<br><img src="https://raw.githubusercontent.com/tfktk/picture/main/img/1702132364879-fa954fa2-ae5b-478f-b135-88ccd94cfb1d.png" alt="image.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>字符集和编码</title>
       <link href="/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/"/>
       <url>/2023/12/10/%E5%AD%97%E7%AC%A6%E9%9B%86%E5%92%8C%E7%BC%96%E7%A0%81/</url>
